@@ -1,6 +1,6 @@
 
 /*
- * gcc test.c -llua
+ * gcc test.c -llua -lm
  */
 
 
@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
     printf("settopfun : stack top = %d\n", lua_gettop(L));
     lua_settop(L, 0);
     printf("settopfun : stack top = %d\n", lua_gettop(L));
+
+    lua_close(L);
     
     return 0;
 }
